@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  #root {
+    height: 100vh;
+    display: flex;
+    background: #1d2021;
+  }
+
+  #tries {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+  
+  .memory-game {
+    width: 640px;
+    height: 480px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    perspective: 1000px;
+  }
+
+
+  .memory-card {
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+  }
+  
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    position: absolute;
+    border-radius: 5px;
+    background: #ebc009;
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  }
+  
+#new-try-button {
+  margin-top: 10px;
+    align-items: center;
+    background-image: linear-gradient(144deg,#ebc009, #eb7609 50%,#fcff5c);
+    border: 2px solid #ebc009;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 14px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 120px;
+    max-height: 100%;
+    min-height: 30px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all .3s;
+   }
+   
+#new-try-button:active,
+#new-try-button:hover {
+    outline: 0;
+   }
+   
+ #new-try-button span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+   }
+   
+#new-try-button:hover span {
+    background: none;
+   }
+   
+#new-try-button:active {
+    transform: scale(0.9);
+   }
